@@ -1,0 +1,79 @@
+@use 'sass:math';
+
+$theme-100: hsl(0, 0%, 100%);
+$theme-300: hsl(212, 45%, 89%);
+$theme-500: hsl(220, 15%, 55%);
+$theme-900: hsl(218, 44%, 22%);
+
+$theme-font: 'Outfit', sans-serif;
+
+$font-size-paragraph: 0.9375rem;
+$font-size-header: $font-size-paragraph * 1.5;
+$font-size-small: $font-size-paragraph * 0.8;
+
+$line-height-modifier: 1.5;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  background: $theme-300;
+
+  font-family: $theme-font;
+  font-size: $font-size-paragraph;
+}
+
+main {
+  max-width: 20em;
+  padding: 1em;
+  border-radius: 1em;
+
+  background: $theme-100;
+  box-shadow: 0 1em 2em $theme-500;
+}
+
+h1,
+p,
+footer {
+  text-align: center;
+}
+
+h1 {
+  margin: 1em 0 0.75em;
+
+  font-size: $font-size-header;
+  line-height: $font-size-header * $line-height-modifier;
+  color: $theme-900;
+}
+
+p {
+  line-height: $font-size-paragraph * $line-height-modifier;
+  color: $theme-500;
+
+  margin-bottom: 1.5em;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 0.75em;
+}
+
+footer {
+  position: absolute;
+  bottom: 0.5em;
+  margin: 1em;
+
+  font-size: $font-size-small;
+  color: $theme-900;
+}

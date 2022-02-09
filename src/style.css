@@ -1,8 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Set default font size for TailwindCSS to base its sizing on */
-html {
-  font-size: 15px;
-}

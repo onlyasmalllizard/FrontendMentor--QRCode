@@ -18,6 +18,8 @@ To make the desktop view match the brief, I only needed to add one media query t
 
 ## Version 2 - Converting to TailwindCSS
 
+**Visible on the Tailwind branch**
+
 In order to get some experience with TailwindCSS, I decided to redo the challenge. I removed all of my original CSS but left the HTML as it was. I created a `/src` and `/dist` folder to allow TailwindCSS to compile. I added the theme colours and font into the TailwindCSS config file.
 
 Since TailwindCSS uses a base font size of 1rem, which would be 16px by default in most browsers, I changed the font size to 15px on the `html` element in my style.css file.
@@ -27,3 +29,15 @@ I followed the same approach as in Version 1, except this time I didn't comment 
 When I switched to my desktop view, the only change I needed to make to the QR Code Component was to narrow its width again. I found a max-width setting that looked correct on both mobile and desktop. In retrospect, I could probably refactor my original CSS to use `max-width` on the `main` element instead of a media query.
 
 Finally, I decided to try building a minified version of the CSS, which I have put in the root folder. The original CSS file is in `/src`, and the development compiled CSS file is in `/dist`.
+
+## Version 3 - SCSS
+
+I removed everything from Tailwind and started from the same classless HTML structure I'd used with the previous versions.
+
+The first thing I experimented with was the `sass:math` module to calculate my font sizes. In Version 1, I had used 62.5% to simplify using rems. In Version 2, I had set a single CSS font-size rule that would ripple out into Tailwind.
+
+Here, I set my font-size variable to the unwieldy "0.9375rem" it would convert to by default, then used variables for my header size and small text size to calculate proportional sizes without littering the body of my CSS. I also added a line-height-modifier variable that allows for consistent setting of line heights.
+
+I considered abstracting these variables out into a partial file, but decided that this challenge was too small to justify it.
+
+The scale of this challenge is so small that I didn't have much opportunity to take advantage of all SCSS has to offer. Despite this, I felt a benefit from working with it and am excited to do more with it.
